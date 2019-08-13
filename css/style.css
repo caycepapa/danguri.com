@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 body {
   /*font拡大時、スマホ横表示でも同じ大きさにするために必要*/
   -webkit-text-size-adjust: 100%;
