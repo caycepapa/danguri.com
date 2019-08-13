@@ -228,8 +228,8 @@ br {
 }
 
 ::selection {
-  background:#DDDDDD;
-  color:#333333;
+  background:#d95473;
+  color:#FFFFF;
 }
 
 input::selection, textarea::selection {

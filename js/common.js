@@ -1,6 +1,5 @@
 $(function() {
 
-
 /*カウントダウン*/
 
 countDown();
@@ -38,7 +37,7 @@ function countDown() {
     }
 
     $("#timer__left").html("<span class='timer__day'>" + d + "</span>" + "D" + "<span class='timer__hour'>" + h + "</span>" + "H" + "<span class='timer__min'>" + m + "</span>" + "M" + "<span class='timer__second'>" + s + "</span>" + "S" + "<span class='timer__milli'>" + ms + "</span>" );
-    
+
     setTimeout(function(){
         countDown();
     },1);
@@ -75,7 +74,7 @@ TweenMax.to({}, 0.016, {
                 rotation:roundNum
             }
         });*/
-        
+
 
         TweenMax.set(follower, {
             css: {
