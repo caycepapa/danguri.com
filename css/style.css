@@ -281,3 +281,9 @@ a {
 a:hover {
   text-decoration: underline
 }
+
+#container{
+  width:100%;
+  height:100%;
+  background:#DDD;
+}
