@@ -1,4 +1,7 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Staatliches');
 
 body {
   /*font拡大時、スマホ横表示でも同じ大きさにするために必要*/
@@ -236,8 +239,11 @@ input::selection, textarea::selection {
 html {
   font-size: 62.5%;
   min-height: 100%;
-  width: 100%;
+  width: 100vh;
   padding: 0;
+  cursor: none;
+  background:#000515;
+  overflow: hidden;
 }
 
 body {
@@ -250,7 +256,6 @@ body {
   font-size: 16px;
   line-height: 2;
   font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-  background: #FFFFFF;
   color: #333333;
   letter-spacing: .01rem;
   -webkit-overflow-scrolling: touch;
@@ -283,7 +288,250 @@ a:hover {
 }
 
 #container{
+  color:#FFF;
+  width:100vw;
+  height: 100vh;
+}
+
+#site__logo{
+  position: fixed;
+  top:30px;
+  left:40px;
+  z-index: 100;
+}
+
+#site__logo a{
+  display: block;
+  background:url(../images/common/logo.svg);
+  width:99px;
+  height:23px;
+  overflow:hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+}
+
+.timer{
+    /*font-family: 'Anton', sans-serif;*/
+    font-family: 'Staatliches', cursive;
+    font-size:2vw;
+    color:#FFFFFF;
+    position: fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+#timer__left{
+    text-align:right;
+    width:100%;
+    opacity: 0.3;
+    z-index: 1;
+    line-height: .6;
+}
+
+.timer span{
+    font-size:5vw;
+}
+
+.timer__day{
+    display: inline-block;
+    width:20vw;
+    text-align: right;
+}
+
+.timer__hour{
+    display: inline-block;
+    width:5vw;
+    text-align: right;
+}
+
+.timer__min{
+    display: inline-block;
+    width:5vw;
+    text-align: right;
+}
+
+.timer__second{
+    display: inline-block;
+    width:5vw;
+    text-align: right;
+}
+
+.timer__milli{
+    display: inline-block;
+    width:5vw;
+}
+
+
+.cursor {
+    position: absolute;
+    background: #d95473;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    z-index: 1;
+    transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10000;
+    transform: scale(1);
+}
+
+
+.cursor.active {
+    opacity: 0.5;
+    transform: scale(0);
+}
+
+.cursor.hovered {
+      opacity: 0.08;
+  }
+
+
+.cursor-follower {
+    position: absolute;
+    background:rgba(217, 84, 115, 0.5);
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    z-index: 1;
+    transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10000;
+}
+
+.cursor-follower.active {
+    opacity: 0.7;
+    transform: scale(3);
+}
+
+.cursor-follower.hovered {
+    opacity: 0.08;
+}
+
+.client__slide{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+}
+
+.client__slide__item{
+  width:100vw;
+  height:100vh;
+  overflow: hidden;
+}
+
+.client__slide__item__content{
+  float: left;
+}
+
+.client__slide__item h2{
+  font-family: 'Staatliches', cursive;
+  font-size:14vh;
+  position: relative;
+  line-height: 1.5;
+  margin:0 0 4vh;
+}
+
+.client__slide__item h2 a{
+  text-decoration: none;
+}
+
+.client__slide__item p{
+  margin:20vh 0 24vh 0;
+}
+
+.client__slide__item__images{
+  width:30vw;
+  height:100vh;
+  margin:0 3vw 0 15vw;
+  display: block;
+}
+
+.client__slide__item__seemore{
+  font-size:16px;
+  text-decoration: none;
+  position: relative;
+}
+
+.client__slide__item__seemore::after{
+  right: -16px;
+  bottom:5px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #FFFFFF;
+  border-right: 2px solid #FFFFFF;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: #000515;
+  display: block;
+  content:"";
+  position: absolute;
+}
+
+.client__slide__item__seemore:hover{
+  text-decoration: none;
+}
+
+.client__slide__item.unnun h2::after{
+  display: block;
+  content:"";
+  width:7vw;
+  height:4px;
+  position: absolute;
+  bottom:-1vh;
+  left:0;
+  background:#FFFFFF;
+}
+
+.client__slide__item.unnun h2::before{
+  display: block;
+  content:"";
+  width:7vw;
+  height:4px;
+  position: absolute;
+  bottom:-1vh;
+  left:7.2vw;
+  background:#999999;
+}
+
+.client__slide__item.unnun .client__slide__item__images{
+  float: left;
+  background:url(../images/client/unnun/top_image.png) no-repeat center center;
+  background-size: auto 100%;
+}
+
+.nav{
+  width:36px;
+  height:36px;
+  position: fixed;
+  top:30px;
+  right:40px;
+}
+
+.nav::after{
+  display: block;
+  content:"";
   width:100%;
-  height:100%;
-  background:#DDD;
+  height:2px;
+  position: absolute;
+  bottom:12px;
+  left:0;
+  background:#FFFFFF;
+}
+
+.nav::before{
+  display: block;
+  content:"";
+  width:100%;
+  height:2px;
+  position: absolute;
+  top:12px;
+  left:0;
+  background:#FFFFFF;
 }
